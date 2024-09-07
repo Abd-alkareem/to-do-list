@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do 003</title>
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="normalize.css" />
+  </head>
+  <body>
+    <div class="main-holder">
+      <div class="overlay"></div>
+      <div class="add-form">
+        <input type="text" class="fild" placeholder="task-title" />
+        <div>
+          <button class="cancel">cancel</button>
+          <button class="add switch">add</button>
+          <button class="edit switch">edit</button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="header">
+          <i class="fa fa-server"></i>
+          <span>task list</span>
+          <button class="del-all fas fa-trash"></button>
+          <button class="add-btn">add task</button>
+        </div>
+        <div class="task-div">
+          <div class="task">
+            <span class="type"></span>
+            <button class="done"><i class="fas fa-check"></i></button>
+            <div class="info">
+              <div class="title">Example</div>
+              <div class="date">
+                <span class="day">1</span>
+                <span class="mounth">4</span>
+                <span class="year">2024</span>
+                <span class="time">07:03:42</span>
+              </div>
+            </div>
+            <div class="buttons">
+              <button class="edit fas fa-pencil"></button>
+              <button class="delete fas fa-trash"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <script src="main.js"></script>
+  </body>
+</html>
