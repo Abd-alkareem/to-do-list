@@ -4,7 +4,8 @@ body {
     padding: 0;
     background-color: #333;
     height: 100vh;
-    font-family: cursive;
+    font-family: "Kanit", sans-serif;
+    /* font-family: "Cairo", sans-serif; */
     box-sizing: border-box;
 }
 
