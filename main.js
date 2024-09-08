@@ -5,7 +5,8 @@ editBtn = document.querySelector(".add-form .edit"),
 cancelBtn = document.querySelector(".add-form .cancel"),
 fild = document.querySelector(".add-form .fild"),
 taskDiv = document.querySelector(".task-div"),
-delAll = document.querySelector(".header .del-all");
+delAll = document.querySelector(".header .del-all"),
+typeFild = document.querySelector(".type-fild");
 
 
 const days = ["Sun","Mon","Tua","Wed","Thr","Fri","Sat"];
@@ -50,7 +51,7 @@ addBtn.addEventListener("click",()=>{
         //close the form
         closingForm();
         // adding task to the array func
-        adTAraay(fild.value);
+        adTAraay(fild.value,typeFild.value);
         // adding tasks to the page func
         adTPage(tasks);
         //adding the tasks data to the local storage
@@ -74,19 +75,32 @@ addBtn.addEventListener("click",()=>{
 
 
 //adding to the array func
-function adTAraay(titleText){
+function adTAraay(titleText,taskType){
     let dateNow = new Date();
+    let tempH = dateNow.getHours();
+    let m = 'am';
+    if(tempH <= 12){
+        tempH = `${tempH}`;
+    }else{
+        tempH = `${tempH - 12}`;
+        m = 'pm';
+    }
+    if(tempH.lenght = 1){
+        tempH = `0${tempH}`
+    }
     let task = {
         title : titleText,
         id : Date.now(),
         completed : false,
-        day : dateNow.getDate(),
+        type : taskType,
+        day : dateNow.getDay    (),
         dInMth : dateNow.getDate(),
         month : dateNow.getMonth(),
         year : dateNow.getFullYear(),
         sec : dateNow.getSeconds(),
         minute : dateNow.getMinutes(),
-        houre : dateNow.getHours(),
+        halfDay : m,
+        houre : tempH,
         timeZone : Intl.DateTimeFormat().resolvedOptions().timeZone,
     }
     tasks.push(task);
@@ -118,7 +132,7 @@ function adTPage(tasks){
             if(task.completed ){
                 tempTask.classList.add("done");
             }
-            type.classList= "type";
+            type.classList= `type ${task.type}`;
             done.classList = "done";
             doneI.classList = "fas fa-check";
             info .classList = "info";
@@ -134,9 +148,9 @@ function adTPage(tasks){
                 // adding the data to the elements
             titleSpan.appendChild(document.createTextNode(task.title));
             day.appendChild(document.createTextNode(`${days[task.day]} ${task.dInMth}`));
-            mounth.appendChild(document.createTextNode(task.month + 1));
+            mounth.appendChild(document.createTextNode(mths[task.month + 1]));
             year.appendChild(document.createTextNode(task.year));
-            time.appendChild(document.createTextNode(`At: ${task.houre}:${task.minute}:${task.sec}..`))
+            time.appendChild(document.createTextNode(`At: ${task.houre}:${task.minute}:${task.sec} ${task.halfDay}`))
                 // adding id to the task
                 tempTask.id = task.id;            
                 //appending the elements to each other

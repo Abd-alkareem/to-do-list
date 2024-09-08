@@ -129,6 +129,26 @@ body {
     display: initial;
 }
 
+.main-holder .add-form .type-div {
+    display: block;
+    margin: 12px auto;
+}
+
+.main-holder .add-form .type-div .type-fild:focus {
+    outline: none;
+}
+
+.main-holder .add-form .type-div .type-fild {
+    cursor: pointer;
+    padding: 1px 4px;
+    text-transform: capitalize;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+
+}
+
+
+
 .main-holder .header {
     display: flex;
     align-items: center;
@@ -233,7 +253,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    padding: 12px 18px 12px 8px;
+    padding: 12px 12px 12px 8px;
     border-bottom: 1px solid gainsboro;
 }
 
@@ -242,16 +262,30 @@ body {
     text-transform: lowercase;
 }
 
+.main-holder .task-div .task.done .type {
+    background-color: black !important;
+}
+
 .main-holder .task-div .task .type {
     display: block;
     width: 4px;
     height: 40px;
     margin: auto 6px auto 4px;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
     border-radius: 4px;
 }
 
-.main-holder .task-div .task .type {}
+.main-holder .task-div .task .type.normal {
+    background-color: #2cbe32;
+}
+
+.main-holder .task-div .task .type.important {
+    background-color: #00BCD4;
+}
+
+.main-holder .task-div .task .type.necessary {
+    background-color: #ef2617;
+}
 
 .main-holder .task-div .task .done {
     width: 26px;
