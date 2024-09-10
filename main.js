@@ -83,10 +83,10 @@ function adTAraay(titleText,taskType){
         tempH = `${tempH}`;
     }else{
         tempH = `${tempH - 12}`;
-        m = 'pm';
-    }
-    if(tempH.lenght = 1){
-        tempH = `0${tempH}`
+        m = 'pm';   
+    };
+    if(tempH.length == 1){
+        tempH = `0${tempH}`;
     }
     let task = {
         title : titleText,
